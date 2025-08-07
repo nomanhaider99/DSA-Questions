@@ -14,12 +14,17 @@ function majorityElement(nums) {
     let highestOrdered = [];
     for (let element in obj) {
         if (obj[element] >= highest) {
-            highest = obj[element];
+            highest = Number(element);
         }
     }
     highestOrdered.sort((a, b) => b - a);
     console.log("object: ", obj);
-    return highest;
+    if (highest > nums.length / 2) {
+        return highest;
+    }
+    else {
+        return 0;
+    }
 }
 ;
 console.log(majorityElement([3, 2, 3]));
